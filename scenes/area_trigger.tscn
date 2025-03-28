@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://molyvc8570k6"]
+
+[ext_resource type="Script" path="res://area_trigger.gd" id="1_etl7a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ec6kr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qc74h"]
+
+[node name="Area Trigger" type="Area3D"]
+script = ExtResource("1_etl7a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ec6kr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qc74h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

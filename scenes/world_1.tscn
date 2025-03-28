@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhuf3yo5bsa7h"]
+
+[ext_resource type="PackedScene" uid="uid://drxiu8dt4u6h2" path="res://scenes/ObjLamp.tscn" id="1_ucyno"]
+
+[node name="World1" type="Node3D"]
+
+[node name="ObjLamp" parent="." instance=ExtResource("1_ucyno")]
+transform = Transform3D(0.108746, 0, 0, 0, 0.108746, 0, 0, 0, 0.108746, -0.300399, -0.711011, -0.866737)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Room1" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 5, 0, 0, 0)
+use_collision = true
+flip_faces = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CSGCombiner3D/Room1"]
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="CSGCombiner3D/Room1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="CSGCombiner3D/Room1"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="CSGCombiner3D/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
+light_color = Color(1, 1, 0, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, -0.257337, 0.306441, -4.8112)
+flip_faces = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.21772, 0)
+flip_faces = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.230615, 0, 0, 0, 0.230615, 0, 0, 0, 0.230615, 0, -0.891477, 0.192945)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.233652, 0, 0, 0, 0.233652, 0, 0, 0, 0.233652, 0, -0.848765, -0.261018)
+use_collision = true

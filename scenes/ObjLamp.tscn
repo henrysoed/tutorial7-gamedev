@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://drxiu8dt4u6h2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyvl2"]
+albedo_color = Color(1, 1, 0, 1)
+
+[node name="ObjLamp" type="Node3D"]
+
+[node name="lamp" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201028, 0.795402, -0.385322)
+radius = 0.137175
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201028, -0.22515, -0.385322)
+radius = 0.856414
+height = 0.478334
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.402765, 1.68501, -0.828901)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.42467, 1.00899, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 8
+material = SubResource("StandardMaterial3D_gyvl2")
